@@ -37,7 +37,7 @@ function generatePassword(){
   let selectedoptions = []
   
   toLowerChars = confirm(
-    "Would you like to use gitlower case letters in your password?"
+    "Would you like to use lower case letters in your password?"
   )
   if(toLowerChars){
 selectedoptions = selectedoptions.concat(Array.from(lowerCharsOptions))
@@ -60,6 +60,16 @@ selectedoptions = selectedoptions.concat(Array.from(lowerCharsOptions))
   if(numberChars){
     selectedoptions = selectedoptions.concat(Array.from(numberCharsOptions))
       }
+  console.log(selectedoptions)
+  let newPassword = ""
+
+  for (let i = 0; i < charAmount; i++){
+    let index = Math.floor(Math.random() * selectedoptions.length)
+    let randomChar = selectedoptions[index]
+    newPassword = newPassword + randomChar;
+  }
+  console.log (newPassword)
+  return newPassword;
   
 }
 // Add event listener to generate button
